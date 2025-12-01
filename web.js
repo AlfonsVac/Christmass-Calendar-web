@@ -1,4 +1,38 @@
-<!DOCTYPE html>
+export const tasksJs = `const mainTasks = [
+    { 
+        day: 1, 
+        title: "Vánoční hvězda", 
+        icon: "star", 
+        desc: "Zahraj si na blikající hvězdu na stromečku! Děláš 'skákacího panáka' (Jumping Jack) pro kondici a dřepy pro sílu na nošení dárků.", 
+        levels: ["20 panáků + 10 dřepů", "50 panáků + 25 dřepů", "100 panáků + 50 dřepů"], 
+        fact: "Víte, že jméno 'prosinec' pochází od slova 'prosiněti', což znamená prosvítat (slunce mezi mraky)?" 
+    },
+    { day: 2, title: "Smích & Plank", icon: "smile", desc: "Jeden drží plank, druhý ho rozesmívá. Kdo se zasměje, dělá trestné kliky!", levels: ["3x 20 sekund", "3x 30 sekund", "3x 60 sekund"], fact: "Dnes má svátek Blanka. Do Vánoc zbývá 22 dní!" },
+    { day: 3, title: "Adventní procházka", icon: "footprints", desc: "Svižná chůze venku. Najdi 3 vánoční ozdoby ve výlohách.", levels: ["15 min chůze", "30 min chůze", "45 min chůze + běh"], fact: "Proč nemá Santa Claus děti? Protože pytel má na zádech a koule na stromečku." },
+    { day: 4, title: "Core & More", icon: "activity", desc: "Russian twists, výpady, kliky, angličáky. Rychle a efektivně.", levels: ["2 kola", "3 kola", "4 kola bez pauzy"], fact: "Svátek má Barbora. Utrhni třešňovou větvičku. Pokud do Vánoc vykvete, budeš mít štěstí!" },
+    { day: 5, title: "Protažení u světýlek", icon: "flame", desc: "Jemné protažení, dech a klid při svíčkách.", levels: ["5 min strečink", "10 min dýchání", "20 min jóga"], fact: "Dnes večer chodí Mikuláš, čert a anděl. Doufám, že máš čisté svědomí... a cvičební úbor!" },
+    { day: 6, title: "Mikulášská výzva", icon: "gift", desc: "Dřepy, kliky, jumping jacks. Kdo se vzdá, platí čokoládu!", levels: ["3 kola (10 opak.)", "6 kol (10 opak.)", "10 kol (10 opak.)"], fact: "Původní svatý Mikuláš zachránil tři dcery chudého otce tím, že jim vhodil oknem zlato." },
+    { day: 7, title: "Partner HIIT", icon: "timer", desc: "20s cvik / 10s pauza. Dřepy, plank, horolezec, výpady.", levels: ["2 kola", "3 kola", "5 kol"], fact: "Víte, že píseň 'Tichá noc' byla poprvé hrána na kytaru, protože kostelní varhany byly rozbité?" },
+    { day: 8, title: "Outdoor běh", icon: "wind", desc: "Společný běh v lehkém tempu. Zakončeno čajem.", levels: ["2 km indián", "3-5 km běh", "6+ km tempo"], fact: "Dnes má svátek Květoslava. Ideální den na běhání mezi vločkami." },
+    { day: 9, title: "Jóga pro dva", icon: "heart", desc: "Sestava na záda a boky. Ideální po včerejším běhu.", levels: ["10 min relax", "20 min flow", "30 min power"], fact: "Vánoční vtip: Co dělá kapr v obýváku? Čeká na ránu z milosti... nebo na pohádku." },
+    { day: 10, title: "Dance Battle", icon: "music", desc: "Pusť písničky a dej si taneční souboj. Vítěz vybírá film.", levels: ["1 písnička", "2 písničky", "3 písničky + choreo"], fact: "První umělé vánoční stromky byly vyrobeny z husího peří obarveného na zeleno." },
+    { day: 11, title: "Kardio výzva", icon: "trending-up", desc: "Schody, švihadlo nebo běh na místě. Cíl: Zpotit tričko!", levels: ["15 min v kuse", "30 min v kuse", "45 min"], fact: "Do Vánoc zbývá 13 dní. Třináctka je šťastné číslo pro tvoje svaly!" },
+    { day: 12, title: "Silová dvojhra", icon: "users", desc: "Vyber 3 cviky. Střídání po 40s. Po kole pusa místo pauzy.", levels: ["2 kola", "4 kola", "6 kol"], fact: "Víte, že píseň 'Jingle Bells' byla původně napsána k Díkůvzdání, ne k Vánocům?" },
+    { day: 13, title: "Core Challenge", icon: "shield", desc: "Horolezec (Climbers), nůžky, plank taps.", levels: ["2 kola", "3 kola", "4 kola + výdrž"], fact: "Svátek má Lucie. 'Lucie noci upije a dne nepřidá.' Ale my si přidáme sérii navíc!" },
+    { day: 14, title: "Film & Stretch", icon: "tv", desc: "Pusť si film a protahuj se u něj na koberci.", levels: ["10 min nohy", "20 min celé tělo", "Každou reklamu"], fact: "Vtip: 'Mami, můžu mít na Vánoce psa?' 'Ne, budeš mít kapra jako ostatní.'" },
+    { day: 15, title: "Vysoký výkon", icon: "zap", desc: "Burpees, dřepy, kliky, plank. Měř si čas!", levels: ["2 kola max", "4 kola max", "6 kol na čas"], fact: "Už jen 9 dní do Štědrého dne. Už máš dárky? Ne? Tak si dej aspoň trénink." },
+    { day: 16, title: "Dýchací den", icon: "wind", desc: "Jen dech a relax. Zastav se v předvánočním shonu.", levels: ["5 min box breath", "10 min meditace", "15 min Wim Hof"], fact: "Víte, že Norové schovávají o Vánocích košťata, aby jim je neukradly čarodějnice?" },
+    { day: 17, title: "Outdoor kopce", icon: "mountain", desc: "Svižná chůze nebo běh do kopce. Fotka nahoře povinná.", levels: ["20 min chůze", "45 min výšlap", "45 min sprinty"], fact: "Svátek má Daniel. Čas vyběhnout ven a udělat sněhuláka (nebo angličáky)." },
+    { day: 18, title: "Párový workout", icon: "heart-handshake", desc: "Výpady, plank s plácnutím, panák.", levels: ["2 kola", "3 kola", "5 kol"], fact: "Víte, že vánočka má svým tvarem připomínat Ježíška v zavinovačce?" },
+    { day: 19, title: "Klidný večer", icon: "moon", desc: "Jóga, čaj a pohoda. Žádný stres.", levels: ["10 min pozdrav slunci", "20 min yin", "30 min párová"], fact: "Pepíček píše Ježíškovi: 'Pošli mi bratříčka.' Ježíšek odepíše: 'Pošli mi maminku.'" },
+    { day: 20, title: "Zimní sporty", icon: "snowflake", desc: "Běžky, brusle, badminton nebo jen koulovačka.", levels: ["30 min aktivity", "60 min aktivity", "90+ min sportu"], fact: "Svátek má Dagmar. Už jen 4 dny! To uteče jako voda." },
+    { day: 21, title: "Outdoor rande", icon: "coffee", desc: "Procházka zakončená svařákem/čajem. Udělejte si selfie.", levels: ["Krátká procházka", "Dlouhá procházka", "Výlet"], fact: "Zimní slunovrat! Dnešek je nejkratší den v roce. Trénink musí být rychlý." },
+    { day: 22, title: "Partner Plank", icon: "repeat", desc: "Jeden drží plank, druhý dělá dřepy. Pak výměna.", levels: ["2x výměna", "3x výměna", "5x výměna"], fact: "Víš, proč má Santa tak velké břicho? Protože jednou ročně pracuje a zbytek roku jen jí cukroví." },
+    { day: 23, title: "Recovery", icon: "battery-charging", desc: "Pěnový válec, masáž nebo vana. Ticho a klid.", levels: ["10 min masáž", "20 min strečink", "30 min válec"], fact: "Dnes má svátek Vlasta. Zítra to vypukne! Nezapomeň na poslední přípravy." },
+    { day: 24, title: "Vánoční Finále!", icon: "star", desc: "Pohyb dle výběru + velké objetí. Užijte si Štědrý den!", levels: ["12 min rozcvička", "24 min běh", "24 min HIIT"], fact: "Štědrý den! Adam a Eva mají svátek. Užij si pohodu, dárky a... dnešní speciální výzvu! 🎄" }
+];`;
+
+export const html = `<!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
@@ -250,41 +284,10 @@
 
     <canvas id="confetti" class="fixed inset-0 pointer-events-none z-50 hidden"></canvas>
 
+    <script src="tasks.js"></script>
     <script>
         // --- Data: Tasks + Fun Facts ---
-        const mainTasks = [
-            { 
-                day: 1, 
-                title: "Vánoční hvězda", 
-                icon: "star", 
-                desc: "Zahraj si na blikající hvězdu na stromečku! Děláš 'skákacího panáka' (Jumping Jack) pro kondici a dřepy pro sílu na nošení dárků.", 
-                levels: ["20 panáků + 10 dřepů", "50 panáků + 25 dřepů", "100 panáků + 50 dřepů"], 
-                fact: "Víte, že jméno 'prosinec' pochází od slova 'prosiněti', což znamená prosvítat (slunce mezi mraky)?" 
-            },
-            { day: 2, title: "Smích & Plank", icon: "smile", desc: "Jeden drží plank, druhý ho rozesmívá. Kdo se zasměje, dělá trestné kliky!", levels: ["3x 20 sekund", "3x 30 sekund", "3x 60 sekund"], fact: "Dnes má svátek Blanka. Do Vánoc zbývá 22 dní!" },
-            { day: 3, title: "Adventní procházka", icon: "footprints", desc: "Svižná chůze venku. Najdi 3 vánoční ozdoby ve výlohách.", levels: ["15 min chůze", "30 min chůze", "45 min chůze + běh"], fact: "Proč nemá Santa Claus děti? Protože pytel má na zádech a koule na stromečku." },
-            { day: 4, title: "Core & More", icon: "activity", desc: "Russian twists, výpady, kliky, angličáky. Rychle a efektivně.", levels: ["2 kola", "3 kola", "4 kola bez pauzy"], fact: "Svátek má Barbora. Utrhni třešňovou větvičku. Pokud do Vánoc vykvete, budeš mít štěstí!" },
-            { day: 5, title: "Protažení u světýlek", icon: "flame", desc: "Jemné protažení, dech a klid při svíčkách.", levels: ["5 min strečink", "10 min dýchání", "20 min jóga"], fact: "Dnes večer chodí Mikuláš, čert a anděl. Doufám, že máš čisté svědomí... a cvičební úbor!" },
-            { day: 6, title: "Mikulášská výzva", icon: "gift", desc: "Dřepy, kliky, jumping jacks. Kdo se vzdá, platí čokoládu!", levels: ["3 kola (10 opak.)", "6 kol (10 opak.)", "10 kol (10 opak.)"], fact: "Původní svatý Mikuláš zachránil tři dcery chudého otce tím, že jim vhodil oknem zlato." },
-            { day: 7, title: "Partner HIIT", icon: "timer", desc: "20s cvik / 10s pauza. Dřepy, plank, horolezec, výpady.", levels: ["2 kola", "3 kola", "5 kol"], fact: "Víte, že píseň 'Tichá noc' byla poprvé hrána na kytaru, protože kostelní varhany byly rozbité?" },
-            { day: 8, title: "Outdoor běh", icon: "wind", desc: "Společný běh v lehkém tempu. Zakončeno čajem.", levels: ["2 km indián", "3-5 km běh", "6+ km tempo"], fact: "Dnes má svátek Květoslava. Ideální den na běhání mezi vločkami." },
-            { day: 9, title: "Jóga pro dva", icon: "heart", desc: "Sestava na záda a boky. Ideální po včerejším běhu.", levels: ["10 min relax", "20 min flow", "30 min power"], fact: "Vánoční vtip: Co dělá kapr v obýváku? Čeká na ránu z milosti... nebo na pohádku." },
-            { day: 10, title: "Dance Battle", icon: "music", desc: "Pusť písničky a dej si taneční souboj. Vítěz vybírá film.", levels: ["1 písnička", "2 písničky", "3 písničky + choreo"], fact: "První umělé vánoční stromky byly vyrobeny z husího peří obarveného na zeleno." },
-            { day: 11, title: "Kardio výzva", icon: "trending-up", desc: "Schody, švihadlo nebo běh na místě. Cíl: Zpotit tričko!", levels: ["15 min v kuse", "30 min v kuse", "45 min"], fact: "Do Vánoc zbývá 13 dní. Třináctka je šťastné číslo pro tvoje svaly!" },
-            { day: 12, title: "Silová dvojhra", icon: "users", desc: "Vyber 3 cviky. Střídání po 40s. Po kole pusa místo pauzy.", levels: ["2 kola", "4 kola", "6 kol"], fact: "Víte, že píseň 'Jingle Bells' byla původně napsána k Díkůvzdání, ne k Vánocům?" },
-            { day: 13, title: "Core Challenge", icon: "shield", desc: "Horolezec (Climbers), nůžky, plank taps.", levels: ["2 kola", "3 kola", "4 kola + výdrž"], fact: "Svátek má Lucie. 'Lucie noci upije a dne nepřidá.' Ale my si přidáme sérii navíc!" },
-            { day: 14, title: "Film & Stretch", icon: "tv", desc: "Pusť si film a protahuj se u něj na koberci.", levels: ["10 min nohy", "20 min celé tělo", "Každou reklamu"], fact: "Vtip: 'Mami, můžu mít na Vánoce psa?' 'Ne, budeš mít kapra jako ostatní.'" },
-            { day: 15, title: "Vysoký výkon", icon: "zap", desc: "Burpees, dřepy, kliky, plank. Měř si čas!", levels: ["2 kola max", "4 kola max", "6 kol na čas"], fact: "Už jen 9 dní do Štědrého dne. Už máš dárky? Ne? Tak si dej aspoň trénink." },
-            { day: 16, title: "Dýchací den", icon: "wind", desc: "Jen dech a relax. Zastav se v předvánočním shonu.", levels: ["5 min box breath", "10 min meditace", "15 min Wim Hof"], fact: "Víte, že Norové schovávají o Vánocích košťata, aby jim je neukradly čarodějnice?" },
-            { day: 17, title: "Outdoor kopce", icon: "mountain", desc: "Svižná chůze nebo běh do kopce. Fotka nahoře povinná.", levels: ["20 min chůze", "45 min výšlap", "45 min sprinty"], fact: "Svátek má Daniel. Čas vyběhnout ven a udělat sněhuláka (nebo angličáky)." },
-            { day: 18, title: "Párový workout", icon: "heart-handshake", desc: "Výpady, plank s plácnutím, panák.", levels: ["2 kola", "3 kola", "5 kol"], fact: "Víte, že vánočka má svým tvarem připomínat Ježíška v zavinovačce?" },
-            { day: 19, title: "Klidný večer", icon: "moon", desc: "Jóga, čaj a pohoda. Žádný stres.", levels: ["10 min pozdrav slunci", "20 min yin", "30 min párová"], fact: "Pepíček píše Ježíškovi: 'Pošli mi bratříčka.' Ježíšek odepíše: 'Pošli mi maminku.'" },
-            { day: 20, title: "Zimní sporty", icon: "snowflake", desc: "Běžky, brusle, badminton nebo jen koulovačka.", levels: ["30 min aktivity", "60 min aktivity", "90+ min sportu"], fact: "Svátek má Dagmar. Už jen 4 dny! To uteče jako voda." },
-            { day: 21, title: "Outdoor rande", icon: "coffee", desc: "Procházka zakončená svařákem/čajem. Udělejte si selfie.", levels: ["Krátká procházka", "Dlouhá procházka", "Výlet"], fact: "Zimní slunovrat! Dnešek je nejkratší den v roce. Trénink musí být rychlý." },
-            { day: 22, title: "Partner Plank", icon: "repeat", desc: "Jeden drží plank, druhý dělá dřepy. Pak výměna.", levels: ["2x výměna", "3x výměna", "5x výměna"], fact: "Víš, proč má Santa tak velké břicho? Protože jednou ročně pracuje a zbytek roku jen jí cukroví." },
-            { day: 23, title: "Recovery", icon: "battery-charging", desc: "Pěnový válec, masáž nebo vana. Ticho a klid.", levels: ["10 min masáž", "20 min strečink", "30 min válec"], fact: "Dnes má svátek Vlasta. Zítra to vypukne! Nezapomeň na poslední přípravy." },
-            { day: 24, title: "Vánoční Finále!", icon: "star", desc: "Pohyb dle výběru + velké objetí. Užijte si Štědrý den!", levels: ["12 min rozcvička", "24 min běh", "24 min HIIT"], fact: "Štědrý den! Adam a Eva mají svátek. Užij si pohodu, dárky a... dnešní speciální výzvu! 🎄" }
-        ];
+        // mainTasks are now loaded from tasks.js
 
         // --- Logic ---
         const today = new Date();
@@ -318,7 +321,7 @@
                 const locked = isLocked(task.day);
                 
                 const door = document.createElement('div');
-                door.className = `door ${locked ? 'locked' : ''} ${isDone ? 'open completed' : ''}`;
+                door.className = \`door \${locked ? 'locked' : ''} \${isDone ? 'open completed' : ''}\`;
                 door.onclick = () => openDoor(task, door);
 
                 const number = document.createElement('div');
@@ -329,7 +332,7 @@
                 revealed.className = 'door-revealed';
                 
                 let iconName = isDone ? 'check' : task.icon;
-                revealed.innerHTML = `<i data-lucide="${iconName}" class="status-icon w-6 h-6 text-gray-400"></i><span class="text-[10px] font-bold mt-1 text-gray-600 leading-tight">${isDone ? 'HOTOVO' : 'OTEVŘÍT'}</span>`;
+                revealed.innerHTML = \`<i data-lucide="\${iconName}" class="status-icon w-6 h-6 text-gray-400"></i><span class="text-[10px] font-bold mt-1 text-gray-600 leading-tight">\${isDone ? 'HOTOVO' : 'OTEVŘÍT'}</span>\`;
 
                 door.appendChild(number);
                 door.appendChild(revealed);
@@ -357,7 +360,7 @@
             document.getElementById('viewTask').classList.remove('fade-enter');
 
             // Populate Intro Data
-            document.getElementById('modalDayTitle').textContent = `${activeDayNum}. Prosinec`;
+            document.getElementById('modalDayTitle').textContent = \`\${activeDayNum}. Prosinec\`;
             document.getElementById('modalFunFact').textContent = task.fact;
             
             updateLevelUI(); // Reset buttons UI
@@ -381,7 +384,7 @@
             const classes = ['lvl-easy', 'lvl-medium', 'lvl-hard'];
             
             btns.forEach((btn, idx) => {
-                btn.className = `level-btn ${idx === selectedLevel ? classes[idx] + ' active' : 'lvl-inactive'}`;
+                btn.className = \`level-btn \${idx === selectedLevel ? classes[idx] + ' active' : 'lvl-inactive'}\`;
             });
         }
 
@@ -397,7 +400,7 @@
             const lvlColors = ["bg-green-500", "bg-yellow-400", "bg-red-500"];
             const label = document.getElementById('levelLabel');
             label.textContent = lvlNames[selectedLevel];
-            label.className = `absolute top-0 left-0 text-[10px] font-bold px-2 py-0.5 text-white rounded-br-lg ${lvlColors[selectedLevel]}`;
+            label.className = \`absolute top-0 left-0 text-[10px] font-bold px-2 py-0.5 text-white rounded-br-lg \${lvlColors[selectedLevel]}\`;
 
             // Handle Buttons for Completed state
             const btn = document.getElementById('completeBtn');
@@ -408,7 +411,7 @@
                 btn.classList.add('opacity-50');
                 btn.onclick = () => closeModal('taskModal');
             } else {
-                btn.innerHTML = `<span>Splněno!</span> <i data-lucide="check-circle" class="w-6 h-6"></i>`;
+                btn.innerHTML = \`<span>Splněno!</span> <i data-lucide="check-circle" class="w-6 h-6"></i>\`;
                 btn.classList.remove('opacity-50');
                 btn.onclick = () => completeTask(activeDayNum);
             }
@@ -484,7 +487,7 @@
             const particles = [];
             for(let i=0; i<80; i++) particles.push({
                 x: Math.random() * canvas.width, y: -10, r: Math.random() * 5 + 2, d: Math.random() * 5 + 2,
-                color: `hsl(${Math.random()*360}, 70%, 50%)`, tilt: Math.floor(Math.random()*10)-10
+                color: \`hsl(\${Math.random()*360}, 70%, 50%)\`, tilt: Math.floor(Math.random()*10)-10
             });
             let angle = 0;
             function draw() {
@@ -504,4 +507,4 @@
         window.addEventListener('load', initCalendar);
     </script>
 </body>
-</html>
+</html>`;

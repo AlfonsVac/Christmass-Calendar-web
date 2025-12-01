@@ -1,0 +1,16 @@
+{
+  "name": "christmas-calendar-web",
+  "version": "1.0.0",
+  "description": "Vánoční Fitness Kalendář",
+  "main": "worker.js",
+  "scripts": {
+    "start": "wrangler dev worker.js",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
