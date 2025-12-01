@@ -1,35 +1,292 @@
 export const tasksJs = `const mainTasks = [
     { 
         day: 1, 
-        title: "Vánoční hvězda", 
-        icon: "star", 
-        desc: "Zahraj si na blikající hvězdu na stromečku! Děláš 'skákacího panáka' (Jumping Jack) pro kondici a dřepy pro sílu na nošení dárků.", 
-        levels: ["20 panáků + 10 dřepů", "50 panáků + 25 dřepů", "100 panáků + 50 dřepů"], 
-        fact: "Víte, že jméno 'prosinec' pochází od slova 'prosiněti', což znamená prosvítat (slunce mezi mraky)?" 
+        title: "Startovací svíčka", 
+        icon: "flame", 
+        desc: "Začínáme! Cílem je zpevnit střed těla (Core). Představ si, že jsi tuhá svíčka. Zatni břicho, zadek a neprohýbej se v zádech.", 
+        levels: [
+            "Výdrž v kliku (na kolenou): 3x 20 sekund", 
+            "Klasický Plank (Prkno): 3x 45 sekund", 
+            "Plank se zvedáním končetin: 3x 60 sekund (střídej ruce/nohy)"
+        ], 
+        fact: "Víte, že první adventní věnec vymyslel teolog v Hamburku v roce 1839 a měl 24 svíček?" 
     },
-    { day: 2, title: "Smích & Plank", icon: "smile", desc: "Jeden drží plank, druhý ho rozesmívá. Kdo se zasměje, dělá trestné kliky!", levels: ["3x 20 sekund", "3x 30 sekund", "3x 60 sekund"], fact: "Dnes má svátek Blanka. Do Vánoc zbývá 22 dní!" },
-    { day: 3, title: "Adventní procházka", icon: "footprints", desc: "Svižná chůze venku. Najdi 3 vánoční ozdoby ve výlohách.", levels: ["15 min chůze", "30 min chůze", "45 min chůze + běh"], fact: "Proč nemá Santa Claus děti? Protože pytel má na zádech a koule na stromečku." },
-    { day: 4, title: "Core & More", icon: "activity", desc: "Russian twists, výpady, kliky, angličáky. Rychle a efektivně.", levels: ["2 kola", "3 kola", "4 kola bez pauzy"], fact: "Svátek má Barbora. Utrhni třešňovou větvičku. Pokud do Vánoc vykvete, budeš mít štěstí!" },
-    { day: 5, title: "Protažení u světýlek", icon: "flame", desc: "Jemné protažení, dech a klid při svíčkách.", levels: ["5 min strečink", "10 min dýchání", "20 min jóga"], fact: "Dnes večer chodí Mikuláš, čert a anděl. Doufám, že máš čisté svědomí... a cvičební úbor!" },
-    { day: 6, title: "Mikulášská výzva", icon: "gift", desc: "Dřepy, kliky, jumping jacks. Kdo se vzdá, platí čokoládu!", levels: ["3 kola (10 opak.)", "6 kol (10 opak.)", "10 kol (10 opak.)"], fact: "Původní svatý Mikuláš zachránil tři dcery chudého otce tím, že jim vhodil oknem zlato." },
-    { day: 7, title: "Partner HIIT", icon: "timer", desc: "20s cvik / 10s pauza. Dřepy, plank, horolezec, výpady.", levels: ["2 kola", "3 kola", "5 kol"], fact: "Víte, že píseň 'Tichá noc' byla poprvé hrána na kytaru, protože kostelní varhany byly rozbité?" },
-    { day: 8, title: "Outdoor běh", icon: "wind", desc: "Společný běh v lehkém tempu. Zakončeno čajem.", levels: ["2 km indián", "3-5 km běh", "6+ km tempo"], fact: "Dnes má svátek Květoslava. Ideální den na běhání mezi vločkami." },
-    { day: 9, title: "Jóga pro dva", icon: "heart", desc: "Sestava na záda a boky. Ideální po včerejším běhu.", levels: ["10 min relax", "20 min flow", "30 min power"], fact: "Vánoční vtip: Co dělá kapr v obýváku? Čeká na ránu z milosti... nebo na pohádku." },
-    { day: 10, title: "Dance Battle", icon: "music", desc: "Pusť písničky a dej si taneční souboj. Vítěz vybírá film.", levels: ["1 písnička", "2 písničky", "3 písničky + choreo"], fact: "První umělé vánoční stromky byly vyrobeny z husího peří obarveného na zeleno." },
-    { day: 11, title: "Kardio výzva", icon: "trending-up", desc: "Schody, švihadlo nebo běh na místě. Cíl: Zpotit tričko!", levels: ["15 min v kuse", "30 min v kuse", "45 min"], fact: "Do Vánoc zbývá 13 dní. Třináctka je šťastné číslo pro tvoje svaly!" },
-    { day: 12, title: "Silová dvojhra", icon: "users", desc: "Vyber 3 cviky. Střídání po 40s. Po kole pusa místo pauzy.", levels: ["2 kola", "4 kola", "6 kol"], fact: "Víte, že píseň 'Jingle Bells' byla původně napsána k Díkůvzdání, ne k Vánocům?" },
-    { day: 13, title: "Core Challenge", icon: "shield", desc: "Horolezec (Climbers), nůžky, plank taps.", levels: ["2 kola", "3 kola", "4 kola + výdrž"], fact: "Svátek má Lucie. 'Lucie noci upije a dne nepřidá.' Ale my si přidáme sérii navíc!" },
-    { day: 14, title: "Film & Stretch", icon: "tv", desc: "Pusť si film a protahuj se u něj na koberci.", levels: ["10 min nohy", "20 min celé tělo", "Každou reklamu"], fact: "Vtip: 'Mami, můžu mít na Vánoce psa?' 'Ne, budeš mít kapra jako ostatní.'" },
-    { day: 15, title: "Vysoký výkon", icon: "zap", desc: "Burpees, dřepy, kliky, plank. Měř si čas!", levels: ["2 kola max", "4 kola max", "6 kol na čas"], fact: "Už jen 9 dní do Štědrého dne. Už máš dárky? Ne? Tak si dej aspoň trénink." },
-    { day: 16, title: "Dýchací den", icon: "wind", desc: "Jen dech a relax. Zastav se v předvánočním shonu.", levels: ["5 min box breath", "10 min meditace", "15 min Wim Hof"], fact: "Víte, že Norové schovávají o Vánocích košťata, aby jim je neukradly čarodějnice?" },
-    { day: 17, title: "Outdoor kopce", icon: "mountain", desc: "Svižná chůze nebo běh do kopce. Fotka nahoře povinná.", levels: ["20 min chůze", "45 min výšlap", "45 min sprinty"], fact: "Svátek má Daniel. Čas vyběhnout ven a udělat sněhuláka (nebo angličáky)." },
-    { day: 18, title: "Párový workout", icon: "heart-handshake", desc: "Výpady, plank s plácnutím, panák.", levels: ["2 kola", "3 kola", "5 kol"], fact: "Víte, že vánočka má svým tvarem připomínat Ježíška v zavinovačce?" },
-    { day: 19, title: "Klidný večer", icon: "moon", desc: "Jóga, čaj a pohoda. Žádný stres.", levels: ["10 min pozdrav slunci", "20 min yin", "30 min párová"], fact: "Pepíček píše Ježíškovi: 'Pošli mi bratříčka.' Ježíšek odepíše: 'Pošli mi maminku.'" },
-    { day: 20, title: "Zimní sporty", icon: "snowflake", desc: "Běžky, brusle, badminton nebo jen koulovačka.", levels: ["30 min aktivity", "60 min aktivity", "90+ min sportu"], fact: "Svátek má Dagmar. Už jen 4 dny! To uteče jako voda." },
-    { day: 21, title: "Outdoor rande", icon: "coffee", desc: "Procházka zakončená svařákem/čajem. Udělejte si selfie.", levels: ["Krátká procházka", "Dlouhá procházka", "Výlet"], fact: "Zimní slunovrat! Dnešek je nejkratší den v roce. Trénink musí být rychlý." },
-    { day: 22, title: "Partner Plank", icon: "repeat", desc: "Jeden drží plank, druhý dělá dřepy. Pak výměna.", levels: ["2x výměna", "3x výměna", "5x výměna"], fact: "Víš, proč má Santa tak velké břicho? Protože jednou ročně pracuje a zbytek roku jen jí cukroví." },
-    { day: 23, title: "Recovery", icon: "battery-charging", desc: "Pěnový válec, masáž nebo vana. Ticho a klid.", levels: ["10 min masáž", "20 min strečink", "30 min válec"], fact: "Dnes má svátek Vlasta. Zítra to vypukne! Nezapomeň na poslední přípravy." },
-    { day: 24, title: "Vánoční Finále!", icon: "star", desc: "Pohyb dle výběru + velké objetí. Užijte si Štědrý den!", levels: ["12 min rozcvička", "24 min běh", "24 min HIIT"], fact: "Štědrý den! Adam a Eva mají svátek. Užij si pohodu, dárky a... dnešní speciální výzvu! 🎄" }
+    { 
+        day: 2, 
+        title: "Sněhová koule", 
+        icon: "snowflake", 
+        desc: "Kardio trénink na zahřátí. Představ si, že uhýbáš letícím koulím a pak jednu házíš zpět. Důležitý je dynamický pohyb!", 
+        levels: [
+            "20 dřepů (pomalé tempo)", 
+            "20 dřepů s výponem na špičky (dynamicky)", 
+            "20 dřepů s výskokem (Jumping Squats) - měkký dopad!"
+        ], 
+        fact: "Největší sněhová koule na světě měla průměr přes 3 metry. To bys nechtěl chytit do hlavy." 
+    },
+    { 
+        day: 3, 
+        title: "Úklid pod gaučem", 
+        icon: "search", 
+        desc: "Výpady vzad. Představ si, že musíš sáhnout hluboko pod gauč pro zakutálenou ozdobu. Koleno zadní nohy jde těsně nad zem, záda rovná.", 
+        levels: [
+            "Zadní výpady (s oporou o židli): 3x 8 na každou nohu", 
+            "Klasické zadní výpady: 3x 12 na každou nohu", 
+            "Výpady s přeskokem (Lunge Jumps): 3x 10 na každou nohu"
+        ], 
+        fact: "Průměrný člověk stráví hledáním ztracených věcí (jako ovladač nebo ozdoby) až rok života." 
+    },
+    { 
+        day: 4, 
+        title: "Balení dárků", 
+        icon: "gift", 
+        desc: "Ruský twist (rotace trupu v sedě). Sedni si na zem, mírně se zakloň (rovná záda!) a předávej si imaginární (nebo skutečný) dárek zleva doprava.", 
+        levels: [
+            "Nohy na zemi, pomalé otáčení: 3x 20 otočení", 
+            "Nohy ve vzduchu, v ruce polštář: 3x 30 otočení", 
+            "Nohy ve vzduchu, v ruce láhev s vodou: 3x 50 otočení"
+        ], 
+        fact: "Svátek má Barbora. Utrhni třešňovou větvičku. Pokud do Vánoc vykvete, budeš mít štěstí!" 
+    },
+    { 
+        day: 5, 
+        title: "Čištění komína", 
+        icon: "wind", 
+        desc: "Horolezec (Mountain Climbers). Ruce na zemi jako v kliku a střídavě přitahuj kolena k hrudníku. Musíš ten komín vyčistit rychle, než přijde Mikuláš!", 
+        levels: [
+            "Pomalé přitahování kolen (o gauč): 3x 20 sekund", 
+            "Klasický horolezec na zemi: 4x 30 sekund", 
+            "Sprint horolezec (maximální rychlost): 5x 30 sekund"
+        ], 
+        fact: "Dnes večer chodí Mikuláš. Doufám, že máš čisté svědomí... a cvičební úbor!" 
+    },
+    { 
+        day: 6, 
+        title: "Mikulášská nadílka", 
+        icon: "shopping-bag", 
+        desc: "Dřepy se zátěží. Vezmi batoh, naplň ho knihami nebo lahvemi s vodou (jako pytel s uhlím/dárky) a jdeme na to. Váha je na patách!", 
+        levels: [
+            "Dřepy s prázdným batohem na zádech: 3x 10", 
+            "Dřepy s plným batohem (cca 5kg): 4x 12", 
+            "Dřepy s batohem nad hlavou (výdrž): 4x 15"
+        ], 
+        fact: "Původní svatý Mikuláš zachránil tři dcery chudého otce tím, že jim vhodil oknem zlato." 
+    },
+    { 
+        day: 7, 
+        title: "Nedělní svíčka", 
+        icon: "coffee", 
+        desc: "Jóga a Relax. Dnes je neděle, zpomalíme. Soustřeď se na hluboký dech do břicha a plynulý pohyb.", 
+        levels: [
+            "5 minut hlubokého dýchání v sedě", 
+            "10 minut Pozdrav slunci (pomalé tempo)", 
+            "15 minut Flow jóga (plynulé přechody)"
+        ], 
+        fact: "Víte, že píseň 'Tichá noc' byla poprvé hrána na kytaru, protože kostelní varhany byly rozbité?" 
+    },
+    { 
+        day: 8, 
+        title: "Věšení záclon", 
+        icon: "arrow-up", 
+        desc: "Ramena. Vezmi do každé ruky 0.5l láhev vody (nebo plechovku hrášku). Upažuj (zvedej ruce do stran) a pak předpažuj. Lokty mírně pokrčené.", 
+        levels: [
+            "Bez zátěže, kroužení pažemi: 3 minuty", 
+            "S plechovkami: 3x 12 upažení + 12 předpažení", 
+            "S 1.5l lahvemi: 4x 15 upažení + výdrž nahoře"
+        ], 
+        fact: "Dnes má svátek Květoslava. Ideální den na to, udělat si doma útulno." 
+    },
+    { 
+        day: 9, 
+        title: "Jízda na saních", 
+        icon: "map", 
+        desc: "Břicho. Lehni si na záda, bedra přitlač k zemi, zvedni nohy a dělej 'nůžky' nebo 'jízdu na kole'. Musíme dojet pro stromeček!", 
+        levels: [
+            "Nohy vysoko (lehčí): 3x 30 sekund", 
+            "Nohy nízko nad zemí (těžší): 3x 45 sekund", 
+            "Nohy nízko + zvednutá hlava a ramena: 3x 60 sekund"
+        ], 
+        fact: "Vánoční vtip: Co dělá kapr v obýváku? Čeká na ránu z milosti... nebo na pohádku." 
+    },
+    { 
+        day: 10, 
+        title: "Schody do nebe", 
+        icon: "trending-up", 
+        desc: "Kardio výstup. Najdi doma schod, pevnou stoličku nebo jen místo na podlaze. Vystupuj nahoru a dolů (Step-ups). Střídej nohy!", 
+        levels: [
+            "Chůze na místě s vysokými koleny: 3 minuty", 
+            "Výstupy na židli/schod (pomalu): 50x celkem", 
+            "Rychlé výstupy/výskoky na schod: 5 minut v kuse"
+        ], 
+        fact: "První umělé vánoční stromky byly vyrobeny z husího peří obarveného na zeleno." 
+    },
+    { 
+        day: 11, 
+        title: "Válení těsta", 
+        icon: "circle", 
+        desc: "Tricepsy (zadní strana paží). Kliky o židli (Tricep Dips). Opři se rukama o kraj židle (zajisti ji proti zdi!) a spouštěj zadek dolů.", 
+        levels: [
+            "Kliky o stůl (ruce výš než nohy): 3x 10", 
+            "Dipsy o židli (pokrčená kolena): 3x 12", 
+            "Dipsy o židli (natažené nohy): 3x 15"
+        ], 
+        fact: "Do Vánoc zbývá 13 dní. Třináctka je šťastné číslo pro tvoje svaly!" 
+    },
+    { 
+        day: 12, 
+        title: "Fronta na kapra", 
+        icon: "clock", 
+        desc: "Statická síla nohou (Wall Sit). Opři se zády o zeď, klesni, jako bys seděl/a na neviditelné židli. Kolena v pravém úhlu. A drž!", 
+        levels: [
+            "Polosed (vyšší pozice): 3x 30 sekund", 
+            "Pravý úhel (stehna vodorovně): 3x 45 sekund", 
+            "Pravý úhel + ruce před sebe s 'dárkem': 3x 60 sekund"
+        ], 
+        fact: "Víte, že píseň 'Jingle Bells' byla původně napsána k Díkůvzdání, ne k Vánocům?" 
+    },
+    { 
+        day: 13, 
+        title: "Slepá Lucie", 
+        icon: "eye-off", 
+        desc: "Rovnováha a stabilita. Lucie noci upije... cvičíme se zavřenýma očima! Stůj na jedné noze (pozice stromu nebo holubička). Bezpečí především!", 
+        levels: [
+            "Stoj na jedné noze (oči otevřené): 60s každá noha", 
+            "Stoj na jedné noze (oči zavřené): 30s každá noha", 
+            "Holubička (předklon) se zavřenýma očima: 5x na každou nohu"
+        ], 
+        fact: "Svátek má Lucie. Dříve se věřilo, že v tento den mají zlé síly největší moc. My je zaženeme pohybem!" 
+    },
+    { 
+        day: 14, 
+        title: "Vytírání podlahy", 
+        icon: "droplet", 
+        desc: "Core (Jádro). Potřebuješ ručník a hladkou podlahu (nebo ponožky na linu). V pozici prkna (Plank) přitahuj nohy k rukám smykem.", 
+        levels: [
+            "Plank na kolenou (držení): 3x 30 sekund", 
+            "Přitahování kolen pod sebe (na ručníku): 3x 10", 
+            "Pike (zvedání zadku nahoru s nataženýma nohama): 3x 12"
+        ], 
+        fact: "Vtip: 'Mami, můžu mít na Vánoce psa?' 'Ne, budeš mít kapra jako ostatní.'" 
+    },
+    { 
+        day: 15, 
+        title: "Balancování cukroví", 
+        icon: "cookie", 
+        desc: "Výpady do stran. Představ si, že v natažené ruce neseš tác s křehkým cukrovím a nesmíš ho upustit. Záda rovná, zadek dozadu.", 
+        levels: [
+            "Úkroky do stran (bez klesání): 3x 20", 
+            "Hluboké boční výpady: 3x 10 na každou stranu", 
+            "Boční výpady s 1.5l lahví v natažených rukou: 3x 12 na stranu"
+        ], 
+        fact: "Už jen 9 dní do Štědrého dne. Už máš dárky? Ne? Tak si dej aspoň trénink." 
+    },
+    { 
+        day: 16, 
+        title: "Zvedání stromečku", 
+        icon: "arrow-up-circle", 
+        desc: "Mrtvý tah (Záda a nohy). Použijeme 'domácí činku' (balík vod, kbelík, těžká taška). Zvedej ze země s rovnými zády, pohyb vychází z kyčlí!", 
+        levels: [
+            "Zvedání lehčí tašky/polštáře: 3x 15", 
+            "Zvedání balíku vod (6x1.5l): 4x 10", 
+            "Zvedání na jedné noze (Single Leg Deadlift): 3x 10 na nohu"
+        ], 
+        fact: "Víte, že Norové schovávají o Vánocích košťata, aby jim je neukradly čarodějnice?" 
+    },
+    { 
+        day: 17, 
+        title: "Přeskakování kaluží", 
+        icon: "cloud-rain", 
+        desc: "Kardio - Bruslař. Skákej ze strany na stranu, jako bys bruslil/a nebo přeskakoval/a břečku. Odraz se z jedné nohy, dopadni na druhou.", 
+        levels: [
+            "Pomalé přenášení váhy (bez skoku): 3x 45 sekund", 
+            "Klasický bruslař (skoky): 4x 30 sekund", 
+            "Bruslař s dotykem země rukou: 4x 45 sekund"
+        ], 
+        fact: "Svátek má Daniel. Čas vyběhnout ven a udělat sněhuláka (nebo angličáky)." 
+    },
+    { 
+        day: 18, 
+        title: "Tlačení sání", 
+        icon: "truck", 
+        desc: "Celé tělo. Opři se dlaněmi do zdi v úrovni hrudníku a tlač vší silou, jako bys tlačil/a uvízlé auto. K tomu střídavě zvedej kolena (High Knees).", 
+        levels: [
+            "Tlačení do zdi (statické): 4x 20 sekund", 
+            "Tlačení + pomalá chůze na místě: 4x 30 sekund", 
+            "Tlačení + sprint na místě (Wall Sprint): 5x 20 sekund (MAX úsilí!)"
+        ], 
+        fact: "Víte, že vánočka má svým tvarem připomínat Ježíška v zavinovačce?" 
+    },
+    { 
+        day: 19, 
+        title: "Zrcadlová výzva", 
+        icon: "users", 
+        desc: "Zábava. Cvič s partnerem, dětmi nebo proti zrcadlu. Dřep s plácnutím (High Five). Dole dřep, nahoře výskok a plácnutí.", 
+        levels: [
+            "Dřepy a plácnutí dlaní: 30 opakování", 
+            "Dřepy s výskokem a plácnutím: 30 opakování", 
+            "Angličák (Burpee) s plácnutím: 20 opakování"
+        ], 
+        fact: "Pepíček píše Ježíškovi: 'Pošli mi bratříčka.' Ježíšek odepíše: 'Pošli mi maminku.'" 
+    },
+    { 
+        day: 20, 
+        title: "Víkendová výprava", 
+        icon: "compass", 
+        desc: "Aktivní odpočinek. Jdi ven, bez ohledu na počasí. Čerstvý vzduch dělá zázraky pro imunitu i náladu.", 
+        levels: [
+            "Procházka kolem bloku: 15 minut", 
+            "Svižná chůze pro větvičky: 30 minut", 
+            "Indiánský běh (střídání chůze/běh): 40 minut"
+        ], 
+        fact: "Svátek má Dagmar. Už jen 4 dny! To uteče jako voda." 
+    },
+    { 
+        day: 21, 
+        title: "Válíme těsto II", 
+        icon: "layers", 
+        desc: "Kliky (Push-ups). Král cviků na horní polovinu těla. Posilujeme prsa a ruce, abychom unesli všechny ty plechy s cukrovím.", 
+        levels: [
+            "Kliky o kuchyňskou linku (ve stoje): 3x 10", 
+            "Dámské kliky (na kolenou): 3x 10", 
+            "Pánské kliky (klasické): 3x co to dá (do selhání)"
+        ], 
+        fact: "Zimní slunovrat! Dnešek je nejkratší den v roce. Trénink musí být rychlý." 
+    },
+    { 
+        day: 22, 
+        title: "Nákupní horečka", 
+        icon: "zap", 
+        desc: "HIIT (High Intensity Interval Training). Střídání vysoké zátěže a odpočinku. Běh na místě s vysokými koleny. Vypusť páru a stres!", 
+        levels: [
+            "20s běh / 20s pauza (opakuj 6x)", 
+            "20s sprint / 10s pauza (Tabata - opakuj 8x)", 
+            "30s sprint / 15s pauza (opakuj 10x)"
+        ], 
+        fact: "Víš, proč má Santa tak velké břicho? Protože jednou ročně pracuje a zbytek roku jen jí cukroví." 
+    },
+    { 
+        day: 23, 
+        title: "Zlaté prasátko", 
+        icon: "star", 
+        desc: "Záda (Superman). Lehni si na břicho, natáhni ruce i nohy. Zvedni je současně nad zem a drž. Leť jako to prasátko na obloze. Pohled směřuje do země.", 
+        levels: [
+            "Zvedání jen rukou, pak jen nohou: 3x 10", 
+            "Superman (výdrž): 3x 20 sekund", 
+            "Plavání (kmitání rukama/nohama ve vzduchu): 3x 40 sekund"
+        ], 
+        fact: "Dnes má svátek Vlasta. Zítra to vypukne! Nezapomeň na poslední přípravy." 
+    },
+    { 
+        day: 24, 
+        title: "Vánoční Finále!", 
+        icon: "gift", 
+        desc: "Angličáky (Burpees). Komplexní cvik na celé tělo. Lehni na zem, klik, vyskoč, tleskni. Rozděl si to klidně do celého dne.", 
+        levels: [
+            "24 dřepů (pokud nemůžeš skákat)", 
+            "24 angličáků bez kliku (jen do vzporu)", 
+            "24 plných angličáků s klikem a výskokem"
+        ], 
+        fact: "Štědrý den! Adam a Eva mají svátek. Užij si pohodu, dárky a... dnešní speciální výzvu! 🎄" 
+    }
 ];`;
 
 export const html = `<!DOCTYPE html>
