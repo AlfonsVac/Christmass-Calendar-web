@@ -408,6 +408,24 @@ export const html = `<!DOCTYPE html>
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Snowflakes */
+        .snowflake {
+            position: fixed;
+            top: -20px;
+            color: white;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1; /* Behind modals (z-50) but above background */
+            animation-name: fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-20px) translateX(0px); }
+            100% { transform: translateY(100vh) translateX(20px); }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -761,7 +779,27 @@ export const html = `<!DOCTYPE html>
             draw();
         }
 
-        window.addEventListener('load', initCalendar);
+        function createSnow() {
+            const container = document.body;
+            const count = 30; // Not too many to keep performance high
+            
+            for(let i=0; i<count; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                flake.textContent = '❄'; // or •
+                flake.style.left = Math.random() * 100 + 'vw';
+                flake.style.animationDuration = (Math.random() * 5 + 5) + 's'; // 5-10s
+                flake.style.opacity = Math.random() * 0.5 + 0.1;
+                flake.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                flake.style.animationDelay = (Math.random() * 5) + 's';
+                container.appendChild(flake);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            initCalendar();
+            createSnow();
+        });
     </script>
 </body>
 </html>`;
