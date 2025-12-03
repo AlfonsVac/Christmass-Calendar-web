@@ -311,9 +311,13 @@ export const html = `<!DOCTYPE html>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #1a472a;
+        }
+
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: #1a472a;
+            background-color: var(--bg-color);
             background-image: 
                 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
                 radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
@@ -323,6 +327,7 @@ export const html = `<!DOCTYPE html>
             color: #333;
             overscroll-behavior-y: none;
             -webkit-tap-highlight-color: transparent;
+            transition: background-color 3s ease;
         }
         
         h1, h2, .day-number { font-family: 'Mountains of Christmas', cursive; }
@@ -796,9 +801,37 @@ export const html = `<!DOCTYPE html>
             }
         }
 
+        function updateTimeTheme() {
+            const hour = new Date().getHours();
+            const root = document.documentElement;
+            
+            // Night: 20:00 - 06:00 (#051f15 - Very Dark Night Green)
+            // Dawn: 06:00 - 09:00 (#2d5a3f - Misty Green)
+            // Day: 09:00 - 16:00 (#15803d - Vibrant Day Green)
+            // Sunset: 16:00 - 20:00 (#1e3a29 - Dimming Green)
+
+            let color = '#051f15'; // Default Night
+            let theme = 'Night';
+
+            if (hour >= 6 && hour < 9) {
+                color = '#2d5a3f'; // Dawn
+                theme = 'Dawn';
+            } else if (hour >= 9 && hour < 16) {
+                color = '#15803d'; // Day
+                theme = 'Day';
+            } else if (hour >= 16 && hour < 20) {
+                color = '#1e3a29'; // Sunset
+                theme = 'Sunset';
+            }
+            
+            root.style.setProperty('--bg-color', color);
+        }
+
         window.addEventListener('load', () => {
             initCalendar();
             createSnow();
+            updateTimeTheme();
+            setInterval(updateTimeTheme, 60000); // Check every minute
         });
     </script>
 </body>
