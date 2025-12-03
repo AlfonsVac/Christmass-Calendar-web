@@ -414,6 +414,33 @@ export const html = `<!DOCTYPE html>
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Mascot Animations */
+        .mascot-container {
+            position: fixed; /* Fixed to stay in view, but behind content */
+            width: 280px;
+            height: auto;
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+            display: none;
+            z-index: 0; /* Behind main content */
+            pointer-events: none;
+            transition: opacity 1s ease;
+        }
+        @media (min-width: 1200px) { 
+            .mascot-container { display: block; } 
+        }
+
+        .mascot-img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            animation: floatMascot 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatMascot {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
         /* Snowflakes */
         .snowflake {
             position: fixed;
@@ -435,8 +462,10 @@ export const html = `<!DOCTYPE html>
 </head>
 <body class="min-h-screen">
 
-    <header class="text-center pt-8 pb-4 px-4">
-        <h1 class="text-4xl md:text-6xl text-white mb-2 drop-shadow-lg">Adventní Výzva</h1>
+    <header class="text-center pt-8 pb-4 px-4 relative z-10">
+        <h1 class="text-4xl md:text-6xl text-white mb-2 drop-shadow-lg">Vánoční Fitness Výzva</h1>
+        <p class="text-white/90 text-lg font-bold mb-4 drop-shadow-md">🎄 24 dní pohybu pro zdravější Vánoce 🎄</p>
+
         <div class="mt-2 text-yellow-300 text-sm font-bold bg-black/30 inline-block px-4 py-1 rounded-full">
             Dnes je: <span id="currentDateDisplay"></span>
         </div>
@@ -827,10 +856,65 @@ export const html = `<!DOCTYPE html>
             root.style.setProperty('--bg-color', color);
         }
 
+        const mascotImages = [
+            "Elf Workout-bench.png",
+            "Elf Workout-deadpull.png",
+            "Elf Workout-plank.png",
+            "Elf.png",
+            "Elfs with gym tools.png",
+            "Present and steel.png",
+            "running rudolf.png",
+            "Santa workout.png"
+        ];
+
+        const mascotPositions = [
+            { top: '10%', left: '5%', transform: 'rotate(-5deg)' },
+            { top: '12%', right: '5%', transform: 'rotate(5deg)' },
+            { bottom: '10%', left: '5%', transform: 'rotate(5deg)' },
+            { bottom: '12%', right: '5%', transform: 'rotate(-5deg)' },
+            { top: '45%', left: '2%', transform: 'rotate(-2deg)' },
+            { top: '50%', right: '2%', transform: 'rotate(2deg)' },
+            { top: '2%', left: '25%', transform: 'rotate(-3deg)' },
+            { bottom: '2%', right: '25%', transform: 'rotate(3deg)' }
+        ];
+
+        function updateMascots() {
+            // Remove existing generated mascots
+            document.querySelectorAll('.mascot-generated').forEach(el => el.remove());
+
+            const day = new Date().getDate();
+            const count = 4; // Show 4 images per day for better coverage
+            
+            // Deterministic selection based on day
+            for(let i=0; i<count; i++) {
+                // Select image
+                const imgIdx = (day + i*3) % mascotImages.length;
+                const imgName = mascotImages[imgIdx];
+                
+                // Select position (ensure unique positions)
+                // Using stride of 3 to jump around the array (Left -> Bottom Right -> Center Left...)
+                const posIdx = (day + i * 3) % mascotPositions.length;
+                const pos = mascotPositions[posIdx];
+
+                const el = document.createElement('div');
+                el.className = 'mascot-container mascot-generated';
+                el.innerHTML = \`<img src="media/\${imgName}" class="mascot-img" alt="Mascot">\`;
+                
+                // Apply styles
+                Object.assign(el.style, pos);
+                
+                // Add random delay to animation so they don't float in sync
+                el.querySelector('img').style.animationDelay = \`-\${i * 2}s\`;
+
+                document.body.appendChild(el);
+            }
+        }
+
         window.addEventListener('load', () => {
             initCalendar();
             createSnow();
             updateTimeTheme();
+            updateMascots();
             setInterval(updateTimeTheme, 60000); // Check every minute
         });
     </script>
