@@ -22,8 +22,10 @@ URL = "https://hitradioorion.cz/playlist/hitradio-orion"
 
 # Co hledáme (bez diakritiky, malá písmena pro porovnání)
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "orion-gott-x7k9q2")
-HLEDANY_INTERPRET = "TWENTY 4 SEVEN"
-HLEDANA_PISEN_KLICOVA_SLOVA = ["Is","It", "Love"]  # všechna musí být v názvu
+HLEDANY_INTERPRET = "twenty 4 seven"
+HLEDANA_PISEN_KLICOVA_SLOVA = ["is", "it", "love"]  # všechna musí být v názvu
+#HLEDANY_INTERPRET = "KAREL GOTT"
+#HLEDANA_PISEN_KLICOVA_SLOVA = ["byt", "stale", "mlad"]  # všechna musí být v názvu
 
 def normalizuj(s: str) -> str:
     """Odstraní diakritiku, převede na malá písmena, sjednotí mezery."""
@@ -70,12 +72,20 @@ def stahni_playlist():
 
 def najdi(pisne):
     vysledek = []
+    # Rozdělíme hledaný interpret a název na slova pro robustnější hledání
+    hledane_slova_interpreta = HLEDANY_INTERPRET.split()
+    
     for cas, nazev, interpret in pisne:
         n_interpret = normalizuj(interpret)
         n_nazev = normalizuj(nazev)
-        if HLEDANY_INTERPRET in n_interpret and all(
-            slovo in n_nazev for slovo in HLEDANA_PISEN_KLICOVA_SLOVA
-        ):
+        
+        # Hledáme, zda všechna slova hledaného interpreta jsou v normalizovaném interpretovi
+        # (odolné na více mezer, různé mezery apod.)
+        interpret_match = all(slovo in n_interpret for slovo in hledane_slova_interpreta)
+        # Hledáme, zda všechna klíčová slova jsou v normalizovaném názvu
+        nazev_match = all(slovo in n_nazev for slovo in HLEDANA_PISEN_KLICOVA_SLOVA)
+        
+        if interpret_match and nazev_match:
             vysledek.append((cas, nazev, interpret))
     return vysledek
 
@@ -84,7 +94,7 @@ def posli_notifikaci(zprava: str, nadpis: str = "Karel Gott na Orionu") -> None:
     try:
         requests.post(
             f"https://ntfy.sh/{NTFY_TOPIC}",
-            data=zprava.encode("utf-8"),
+            data=zprava,
             headers={
                 "Title": nadpis,
                 "Priority": "high",     # urgent / high / default / low / min
