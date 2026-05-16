@@ -22,7 +22,8 @@ URL = "https://hitradioorion.cz/playlist/hitradio-orion"
 
 # Co hledáme (bez diakritiky, malá písmena pro porovnání)
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "orion-gott-x7k9q2")
-
+HLEDANY_INTERPRET = "TWENTY 4 SEVEN"
+HLEDANA_PISEN_KLICOVA_SLOVA = ["Is","It", "Love"]  # všechna musí být v názvu
 
 def normalizuj(s: str) -> str:
     """Odstraní diakritiku, převede na malá písmena, sjednotí mezery."""
