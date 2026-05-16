@@ -2,7 +2,7 @@ name: Hlídač Karla Gotta na Orionu
 
 on:
   schedule:
-    - cron: '*/10 * * * *'   # každých 10 minut
+    - cron: '* 4-16 * * *'   # každých 10 minut
   workflow_dispatch:          # plus možnost spustit ručně tlačítkem
 
 jobs:
