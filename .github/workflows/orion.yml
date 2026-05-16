@@ -1,0 +1,24 @@
+name: Hlídač Karla Gotta na Orionu
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # každých 10 minut
+  workflow_dispatch:          # plus možnost spustit ručně tlačítkem
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalace závislostí
+        run: pip install requests beautifulsoup4
+
+      - name: Kontrola playlistu
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python orion_check.py || true
